@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+.vscode/
+.idea/
+.DS_Store
+bin/ffmpeg*
+bin/ffprobe*

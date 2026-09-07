@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>UaiTiCut</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-title">
+      <span class="hero-emoji">✂️</span>
+      <h1>UaiTiCut</h1>
+    </div>
+    <p class="hero-subtitle">Cole o link, corte o trecho, baixe em MP3</p>
+  </header>
+
+  <div id="setup-banner" class="setup-banner" hidden>
+    <div class="spinner"></div>
+    <div class="setup-text">
+      <span id="setup-message">Preparando componentes...</span>
+      <div class="progress-track thin" id="setup-progress-track">
+        <div class="progress-fill" id="setup-progress-fill" style="width:0%"></div>
+      </div>
+    </div>
+  </div>
+
+  <main class="container">
+
+    <!-- 1. URL -->
+    <section class="card">
+      <h2 class="card-title"><span class="badge">1</span>Link do YouTube</h2>
+      <div class="row">
+        <input id="url-input" type="text" placeholder="https://www.youtube.com/watch?v=..." autocomplete="off" />
+        <button id="load-btn" class="btn btn-primary">Carregar vídeo</button>
+      </div>
+      <p id="url-error" class="error-text" hidden></p>
+    </section>
+
+    <!-- 2. Preview -->
+    <section class="card" id="preview-card" hidden>
+      <h2 class="card-title"><span class="badge">2</span>Pré-visualização</h2>
+      <div class="video-wrap">
+        <div id="yt-player"></div>
+      </div>
+      <p class="video-title" id="video-title"></p>
+    </section>
+
+    <!-- 3. Corte -->
+    <section class="card" id="trim-card" hidden>
+      <h2 class="card-title"><span class="badge">3</span>Escolha o trecho</h2>
+
+      <div class="slider-wrap">
+        <div class="slider-track" id="slider-track">
+          <div class="slider-range" id="slider-range"></div>
+        </div>
+        <input type="range" id="range-start" class="range-input" min="0" max="100" value="0" step="1" />
+        <input type="range" id="range-end" class="range-input" min="0" max="100" value="100" step="1" />
+      </div>
+
+      <div class="trim-controls">
+        <div class="time-field">
+          <label>Início</label>
+          <input type="text" id="start-time" value="00:00" />
+          <button class="btn btn-ghost" id="mark-start-btn" title="Usar o tempo atual do vídeo">Marcar aqui ▶</button>
+        </div>
+        <div class="time-field">
+          <label>Fim</label>
+          <input type="text" id="end-time" value="00:00" />
+          <button class="btn btn-ghost" id="mark-end-btn" title="Usar o tempo atual do vídeo">Marcar aqui ▶</button>
+        </div>
+      </div>
+      <p class="selection-summary">Trecho selecionado: <strong id="selection-length">00:00</strong></p>
+    </section>
+
+    <!-- 4. Pasta -->
+    <section class="card">
+      <h2 class="card-title"><span class="badge">4</span>Pasta de destino</h2>
+      <div class="row">
+        <input id="folder-display" type="text" readonly placeholder="Nenhuma pasta escolhida" />
+        <button id="folder-btn" class="btn btn-secondary">📁 Escolher pasta</button>
+      </div>
+    </section>
+
+    <!-- 5. Download -->
+    <section class="card">
+      <h2 class="card-title"><span class="badge">5</span>Baixar</h2>
+      <button id="download-btn" class="btn btn-cta" disabled>⬇ Baixar MP3</button>
+
+      <div id="progress-area" class="progress-area" hidden>
+        <div class="progress-track">
+          <div class="progress-fill" id="download-progress-fill" style="width:0%"></div>
+        </div>
+        <p id="progress-text" class="progress-text">Iniciando...</p>
+      </div>
+
+      <div id="success-area" class="success-area" hidden>
+        <p>✅ Pronto! Arquivo salvo em:</p>
+        <p class="file-path" id="success-path"></p>
+        <button id="open-folder-btn" class="btn btn-secondary">Abrir pasta</button>
+      </div>
+
+      <p id="download-error" class="error-text" hidden></p>
+    </section>
+
+  </main>
+
+  <footer class="footer">Feito para uso pessoal • os arquivos ficam salvos apenas no seu computador</footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
