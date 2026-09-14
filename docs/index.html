@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>UaiTiCut — corte e baixe trechos de vídeo em MP3</title>
+<meta name="description" content="UaiTiCut é um app gratuito para Windows: cole o link, escolha o trecho e salve o áudio em MP3, tudo direto no seu computador." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9C%82%3C/text%3E%3C/svg%3E" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-title">
+      <span class="hero-emoji">✂️</span>
+      <h1>UaiTiCut</h1>
+    </div>
+    <p class="hero-subtitle">Cole o link, veja o vídeo, escolha o trecho e salve o áudio em MP3 — tudo rodando no seu próprio computador.</p>
+    <div class="hero-actions">
+      <!-- Troque este link pela URL da sua Release do GitHub assim que publicar um instalador -->
+      <a class="btn btn-primary" href="https://github.com/Fabio270/UaiTiCut/releases/latest">⬇ Baixar para Windows</a>
+      <a class="btn btn-secondary" href="https://github.com/Fabio270/UaiTiCut">Ver código no GitHub</a>
+    </div>
+    <p class="hero-note">Gratuito • Windows 10/11 • nenhum arquivo seu passa pela internet</p>
+  </header>
+
+  <div class="container">
+
+    <!-- ===== AD SLOT 1 — topo (leaderboard 728x90, vira 320x50 no celular) ===== -->
+    <!--
+      Quando aprovar sua conta na rede de anúncios (ex.: Google AdSense),
+      substitua o <div class="ad-slot"> abaixo pelo snippet que a rede te
+      der, algo como:
+
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXX"
+           data-ad-slot="XXXXXXXXXX"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    -->
+    <section class="block" style="padding-top:28px; padding-bottom:0;">
+      <div class="ad-wrap">
+        <div class="ad-label">Publicidade</div>
+        <div class="ad-slot ad-slot-leaderboard" id="ad-slot-top">
+          Espaço para anúncio · 728×90
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Como funciona ===== -->
+    <section class="block">
+      <h2 class="section-title">Como funciona</h2>
+      <p class="section-sub">Cinco passos simples, direto na janela do app — sem enviar nada para nenhum servidor.</p>
+      <div class="steps">
+        <div class="step-card">
+          <div class="step-badge">1</div>
+          <h3>Cole o link</h3>
+          <p>Cole a URL do vídeo e clique em Carregar.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-badge">2</div>
+          <h3>Veja a prévia</h3>
+          <p>O vídeo toca dentro do próprio app.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-badge">3</div>
+          <h3>Escolha o trecho</h3>
+          <p>Arraste a barra ou marque início e fim enquanto assiste.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-badge">4</div>
+          <h3>Escolha a pasta</h3>
+          <p>A última pasta usada já fica salva para a próxima vez.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-badge">5</div>
+          <h3>Baixe o MP3</h3>
+          <p>Acompanhe o progresso e pronto — o arquivo fica na sua pasta.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ilustração simplificada da interface (não é uma captura de tela real) -->
+    <section class="block" style="padding-top:0;">
+      <div class="mockup">
+        <div class="mockup-row">🔗 https://www.youtube.com/watch?v=…</div>
+        <div class="mockup-row" style="flex-direction:column; align-items:stretch;">
+          <span>00:42 — 01:58 selecionado</span>
+          <div class="mockup-bar" style="margin-top:8px;"><span></span></div>
+        </div>
+        <div class="mockup-row">📁 C:\Users\você\Downloads</div>
+        <p class="mockup-caption">Ilustração da interface do app (não é uma captura de tela real)</p>
+      </div>
+    </section>
+
+    <!-- ===== AD SLOT 2 — meio de página (retângulo 336x280) ===== -->
+    <section class="block" style="padding-top:0;">
+      <div class="ad-wrap">
+        <div class="ad-label">Publicidade</div>
+        <div class="ad-slot ad-slot-rectangle" id="ad-slot-mid">
+          Espaço para anúncio · 336×280
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Requisitos ===== -->
+    <section class="block" style="padding-top:0;">
+      <div class="card">
+        <h3 style="margin-top:0;">Requisitos</h3>
+        <ul>
+          <li>Windows 10 ou 11</li>
+          <li>Python 3.10+ instalado (o instalador guia você na primeira vez)</li>
+          <li>Internet para carregar o vídeo e baixar o áudio</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:0;">Uso responsável</h3>
+        <p style="margin:0; font-size:14px; color:var(--text-soft); line-height:1.7;">
+          Baixe apenas conteúdo que você tem direito de baixar (vídeos próprios,
+          de domínio público ou com licença que permita). Respeite os Termos de
+          Serviço das plataformas de vídeo e os direitos autorais de terceiros.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="block" style="padding-top:0;">
+      <h2 class="section-title">Perguntas frequentes</h2>
+      <div class="card">
+        <details class="faq-item" open>
+          <summary>O UaiTiCut é gratuito?</summary>
+          <p>Sim, o app é gratuito e de código aberto. Este site se sustenta com os anúncios exibidos aqui na página.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Meus vídeos/áudios passam por algum servidor?</summary>
+          <p>Não. O processamento acontece inteiramente no seu computador — nada é enviado para nós.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Funciona no Mac ou Linux?</summary>
+          <p>Por enquanto o instalador é feito para Windows 10/11.</p>
+        </details>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="footer">
+    Feito por quem gosta de música e vídeo • UaiTiCut não é afiliado a nenhuma plataforma de vídeo
+    <div class="footer-links">
+      <a href="https://github.com/Fabio270/UaiTiCut">GitHub</a>
+      <a href="privacy.html">Privacidade &amp; cookies</a>
+    </div>
+  </footer>
+
+</body>
+</html>
