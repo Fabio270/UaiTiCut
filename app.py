@@ -22,7 +22,21 @@ import webview
 import yt_dlp
 
 APP_DIR = Path(__file__).resolve().parent
-BIN_DIR = APP_DIR / "bin"
+FROZEN = bool(getattr(sys, "frozen", False))
+
+# Quando empacotado com PyInstaller, os arquivos incluidos via --add-data
+# (web/ e, se empacotado, bin/ com o ffmpeg ja pronto) ficam dentro de
+# sys._MEIPASS (onefile: pasta temporaria extraida a cada execucao; onedir:
+# pasta "_internal" ao lado do .exe). Ja o que precisa PERSISTIR entre
+# execucoes (ex.: ffmpeg baixado em tempo de execucao, caso nao tenha vindo
+# empacotado) tem que ficar ao lado do .exe de verdade, nunca em _MEIPASS.
+RESOURCE_DIR = Path(getattr(sys, "_MEIPASS", APP_DIR)) if FROZEN else APP_DIR
+WRITABLE_DIR = Path(sys.executable).resolve().parent if FROZEN else APP_DIR
+
+WEB_INDEX = RESOURCE_DIR / "web" / "index.html"
+
+_bundled_bin = RESOURCE_DIR / "bin"
+BIN_DIR = _bundled_bin if (_bundled_bin / "ffmpeg.exe").exists() else (WRITABLE_DIR / "bin")
 FFMPEG_EXE = BIN_DIR / "ffmpeg.exe"
 FFPROBE_EXE = BIN_DIR / "ffprobe.exe"
 
@@ -312,7 +326,7 @@ def main():
     api = Api()
     window = webview.create_window(
         "UaiTiCut",
-        str(APP_DIR / "web" / "index.html"),
+        str(WEB_INDEX),
         js_api=api,
         width=1000,
         height=820,

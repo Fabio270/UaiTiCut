@@ -17,11 +17,17 @@
     </div>
     <p class="hero-subtitle">Cole o link, veja o vídeo, escolha o trecho e salve o áudio em MP3 — tudo rodando no seu próprio computador.</p>
     <div class="hero-actions">
-      <!-- Troque este link pela URL da sua Release do GitHub assim que publicar um instalador -->
-      <a class="btn btn-primary" href="https://github.com/Fabio270/UaiTiCut/releases/latest">⬇ Baixar para Windows</a>
+      <!--
+        Link "estável": o GitHub sempre redireciona /releases/latest/download/<nome>
+        para o arquivo com esse nome exato anexado na Release mais recente.
+        Ou seja: toda vez que você publicar uma nova Release com um arquivo
+        chamado exatamente "UaiTiCut.exe" anexado, este link passa a apontar
+        pra ele automaticamente — sem precisar editar o site de novo.
+      -->
+      <a class="btn btn-primary" href="https://github.com/Fabio270/UaiTiCut/releases/latest/download/UaiTiCut.exe">⬇ Baixar para Windows (.exe)</a>
       <a class="btn btn-secondary" href="https://github.com/Fabio270/UaiTiCut">Ver código no GitHub</a>
     </div>
-    <p class="hero-note">Gratuito • Windows 10/11 • nenhum arquivo seu passa pela internet</p>
+    <p class="hero-note">Gratuito • Windows 10/11 • ~95 MB • nenhum arquivo seu passa pela internet</p>
   </header>
 
   <div class="container">
@@ -110,10 +116,16 @@
       <div class="card">
         <h3 style="margin-top:0;">Requisitos</h3>
         <ul>
-          <li>Windows 10 ou 11</li>
-          <li>Python 3.10+ instalado (o instalador guia você na primeira vez)</li>
+          <li>Windows 10 ou 11 (64 bits)</li>
           <li>Internet para carregar o vídeo e baixar o áudio</li>
+          <li>Não precisa instalar Python nem nada além do .exe</li>
         </ul>
+        <p style="margin:14px 0 0; font-size:13px; color:var(--text-soft); line-height:1.6;">
+          ⚠️ Como o instalador ainda não tem certificado de assinatura digital,
+          o Windows pode mostrar o aviso <strong>"O Windows protegeu o computador"</strong>
+          na primeira execução. Isso é normal para apps novos e independentes —
+          clique em <strong>Mais informações → Executar assim mesmo</strong>.
+        </p>
       </div>
       <div class="card">
         <h3 style="margin-top:0;">Uso responsável</h3>
